@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>F&B Concierge</title>
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/chat"><img src="{% static 'img/HotelLogo.jpg' %}" style="width: 200px; height: 100px; text-align: center"/></a>
+    <span style="position: absolute;top: 10px;right: 75px;">
+        <a href="{% url 'chat:signin' %}" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 16px 0px 0px">Sign In</a>
+        <span style="color: #ADB9CA">|</span>
+        <a href="{% url 'chat:signup' %}" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 16px 0px 15px">Sing Up</a>
+        <span style="color: #ADB9CA">|</span>
+        <a href="/chat" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 0px 0px 15px;" >My Reservation</a>
+    </span>
+      <div style="position: center;padding: 0px 66px 0px 30px;">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/chat">About The Hotel</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Reservation
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="{% url 'chat:reservation' %}" class="dropdown-item">Room</a>
+              <a href="{% url 'chat:houseKeeping' %}" class="dropdown-item">Housekeeping</a>
+              <a href="{% url 'chat:fbConcierge' %}" class="dropdown-item">F&B | Concierge</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/chat">Inquiries</a>
+          </li>
+        </ul>
+      </div>
+  </nav>
+</header>
+
+        <h3 style="text-align: center; margin: 50px 0px 10px 0px">F&B Reservation</h3>
+    <hr align="center" style="width: 300px; border: 1px solid;">
+    <div style="text-align: -webkit-center;margin-top: 50px">
+        <table style="border: none;">
+          <tr>
+            <td rowspan="5" width=50px style="word-break:break-all; text-align: center">
+                <div class="stackblitz-container material">
+                    <div class="col-lg-12 control-section">
+                      <div class="control_wrapper" style="overflow:auto">
+                        <div id="container">
+                          <div id="calendar"></div>
+                          <br>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td width=150px style="word-break:break-all;vertical-align: top;">Reservation Date</td>
+            <td colspan="5" width=350px style="word-break:break-all;margin-right: 50px;vertical-align: top;">
+                <span id="date_label"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>Room</td>
+            <td colspan="5">
+                <input class="custom-select" type="time" id="appt" name="appt">
+            </td>
+          </tr>
+          <tr>
+            <td>Personel</td>
+            <td colspan="5">
+                <select class="custom-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                  </select>
+            </td>
+          </tr>
+        </table>
+        <button id="onDisplay" class="searchBtn">RESERVATION</button>
+    </div>
+    <hr align="center" style="width: 1200px;margin-bottom: 50px">
+
+    <div>
+        <button class="open-button" onclick="openForm()"><i class="cil-chat-bubble"></i></button>
+
+        <div class="chat-popup" id="myForm">
+          <form class="form-container" onsubmit="return false;">
+              <textarea id="chat-log" style="width: 300px;height: 300px; margin-left: 5px; font-size: 15px"></textarea>
+              <div class="input-group">
+                  <input id="chat-message-input" type="text" placeholder="Search for..." style="width: 250px;height: 35px;margin: 0px 0px 20px 5px">
+                  <button id="chat-message-submit" type="button" class="btn btn-success" style="width: 40px; height: 35px; margin: 0px 0px 20px 10px"><i class="cil-cursor"></i></button>
+              </div>
+            <button type="button" class="btn" onclick="closeForm()" style="width: 300px;height: 40px;margin-left: 5px;text-align: center">Close</button>
+          </form>
+        </div>
+    </div>
+
+    <!-- bootstrap CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/material.css" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.syncfusion.com/ej2/ej2-calendars/styles/material.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.syncfusion.com/ej2/ej2-base/dist/global/ej2-base.min.js" type="text/javascript"></script>
+    <script src="https://cdn.syncfusion.com/ej2/ej2-inputs/dist/global/ej2-inputs.min.js" type="text/javascript"></script>
+    <script src="https://cdn.syncfusion.com/ej2/ej2-buttons/dist/global/ej2-buttons.min.js" type="text/javascript"></script>
+    <script src="https://cdn.syncfusion.com/ej2/ej2-lists/dist/global/ej2-lists.min.js" type="text/javascript"></script>
+    <script src="https://cdn.syncfusion.com/ej2/ej2-popups/dist/global/ej2-popups.min.js" type="text/javascript"></script>
+    <script src="https://cdn.syncfusion.com/ej2/ej2-calendars/dist/global/ej2-calendars.min.js" type="text/javascript"></script>
+
+</body>
+    <div id="element"/>
+    <script>
+    var chatSocket = new WebSocket(
+    'ws://' + window.location.host + '/ws/chatbot/');
+
+    chatSocket.onmessage = function(e) {
+        var data = JSON.parse(e.data);
+        var message = data['message'];
+        document.querySelector('#chat-log').value += ('Bot : ' + message + '\n');
+    };
+
+    chatSocket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+    document.querySelector('#chat-message-input').focus();
+    document.querySelector('#chat-message-input').onkeyup = function(e) {
+        if (e.keyCode === 13) {  // enter, return
+            document.querySelector('#chat-message-submit').click();
+        }
+    };
+
+    document.querySelector('#chat-message-submit').onclick = function(e) {
+        var messageInputDom = document.querySelector('#chat-message-input');
+        var message = messageInputDom.value;
+        chatSocket.send(JSON.stringify({
+            'type' : 'concierge_F&B',
+            'message': message
+        }));
+
+        document.querySelector('#chat-log').value += ('나 : ' + message + '\n');
+
+        messageInputDom.value = ' ';
+    };
+
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+    $('.carousel').carousel()
+
+   ej.base.enableRipple(true);
+
+    var calendar = new ej.calendars.Calendar({
+        renderDayCell: disableDate, change: valueChange
+    });
+    calendar.appendTo('#calendar');
+    function valueChange(args) {
+        (document.getElementById('date_label')).textContent = args.value.toLocaleDateString();
+    }
+    function disableDate(args) {
+        if (args.date.getDay() === 0 || args.date.getDay() === 6) {
+            args.isDisabled = true;
+        }
+    }
+    </script>
+
+</html>
+
+<style>
+    html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.container {
+  max-width: 960px;
+}
+
+.pricing-header {
+  max-width: 700px;
+}
+
+.card-deck .card {
+  min-width: 220px;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+body {
+  padding-top: 150px;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+    }
+}
+
+
+@media (min-width: 40em) {
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+
+.open-button {
+  background-color: #343a40;
+  color: white;
+  padding: 16px 20px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 60px;
+  height: 60px;
+}
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.form-container {
+  max-width: 350px;
+  padding: 10px;
+  background-color: white;
+}
+
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+.form-container input {
+    width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 20px;
+}
+
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #343a40;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: #013e73 ;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.item h4 {
+  font-size: 19px;
+  line-height: 1.375em;
+  font-weight: 400;
+  font-style: italic;
+  margin: 70px 0;
+}
+
+.item span {
+  font-style: normal;
+}
+
+.custom-select {
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none;
+}
+
+.select-selected {
+  background-color: transparent;
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid #000000;
+  border-color: #000000 transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #000000 transparent;
+  top: 7px;
+}
+
+.select-items div,.select-selected {
+  color: #000000;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+.select-items {
+  position: absolute;
+  background-color: #FFFFFF;
+  border: 1px solid #c8c8c8;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: #c8c8c8;
+}
+
+.searchBtn {
+  width: 200px;
+  padding: 10px;
+  margin: 30px 0px 50px 0px;
+  display: block;
+  background-color: #ad9e87;
+  color: white;
+  cursor: pointer;
+  border-radius: .25rem;
+  border: none;
+}
+
+</style>
