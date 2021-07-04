@@ -4,66 +4,65 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>SunmoonHotel</title>
+    <title>SunMoon Bank</title>
 </head>
 <body>
-<header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="/chat"><img src="{% static 'img/HotelLogo.jpg' %}" style="width: 200px; height: 100px; text-align: center"/></a>
-            <span style="position: absolute;top: 10px;right: 75px;">
-                <a href="{% url 'chat:signin' %}" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 16px 0px 0px">Sign In</a>
-                <span style="color: #ADB9CA">|</span>
-                <a href="{% url 'chat:signup' %}" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 16px 0px 15px">Sing Up</a>
-                <span style="color: #ADB9CA">|</span>
-                <a href="/chat" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 0px 0px 15px;" >My Reservation</a>
-            </span>
-          <div style="position: center;padding: 0px 66px 0px 30px;">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/chat">About The Hotel</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Reservation
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a href="{% url 'chat:reservation' %}" class="dropdown-item">Room</a>
-                  <a href="{% url 'chat:houseKeeping' %}" class="dropdown-item">Housekeeping</a>
-                  <a href="{% url 'chat:fbConcierge' %}" class="dropdown-item">F&B | Concierge</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="/chat">Inquiries</a>
-              </li>
-            </ul>
-          </div>
-  </nav>
-</header>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/chat"><img src="{% static 'img/SunMoonYellow.png' %}" style="width: 200px; height: 100px; text-align: center"/></a>
+              <span style="position: absolute;top: 10px;right: 75px;">
+                  <a href="{% url 'chat:signin' %}" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 16px 0px 0px">Sign In</a>
+                  <span style="color: #ADB9CA">|</span>
+                  <a href="{% url 'chat:signup' %}" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 16px 0px 15px">Sing Up</a>
+                  <span style="color: #ADB9CA">|</span>
+                  <a href="/chat" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 0px 0px 15px;" >Certificate Center</a>
+              </span>
+            <div style="position: center;padding: 0px 66px 0px 30px;">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/chat">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Personal Banking
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a href="/chat" class="dropdown-item">Transfer</a>
+                    <a href="{% url 'chat:reservation' %}" class="dropdown-item">Financial Instruments</a>
+                    <a href="{% url 'chat:fbConcierge' %}" class="dropdown-item">Foreign Exchange</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="{% url 'chat:houseKeeping' %}">Customer Service</a>
+                </li>
+              </ul>
+            </div>
+    </nav>
+  </header>
 
 <main role="main">
 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{% static 'img/HotelLobby.jpg' %}"/>
+        <img src="{% static 'img/Lobby.jpg' %}"/>
         <div class="container">
           <div class="carousel-caption text-left">
-            <h3>Asan Sunmoon Hotel</h3>
-            <h2>REWARDS SUNMOON HOTEL WEEK</h2>
+            <h2>SunMoon Bank</h2>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="{% static 'img/HotelRoom.jpg' %}"/>
+        <img src="{% static 'img/investment.jpg' %}"/>
         <div class="container">
           <div class="carousel-caption">
-            <h1>Room</h1>
-            <p>Spend your precious time in the relaxed environment of Sunmoon Hotel.</p>
+            <h1>With Us</h1>
+            <p>Join us at SunMoon Bank.</p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="{% static 'img/HotelRestaurant.jpg' %}"/>
+        <img src="{% static 'img/money.jpg' %}"/>
       </div>
     </div>
     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -82,12 +81,12 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">Higher Level of Service Paradigm</h2>
+        <h2 class="featurette-heading">The Best Service</h2>
           <br>
-        <p class="lead">We try to be a place where people want to stay at least once in their lifetime. With sincere services, one can gain unforgettable experiences in a sophisticated space against the backdrop of rich and breathtaking scenery every moment. We give our guests the memories of being together for a long time with a full approach.</p>
+        <p class="lead">With blockchain technology, you can use it safely with customer information that is stored more securely. Open banking allows integration into one rather than using applications from multiple financial institutions. We'll be your strong financial partners for the rest of your life. We make good memories in life for our customers.</p>
       </div>
       <div class="col-md-5">
-          <img src="{% static 'img/service.jpg' %}" style="width: 500px; height: 500px"/>
+          <img src="{% static 'img/network.jpg' %}" style="width: 500px; height: 500px"/>
       </div>
     </div>
 
@@ -99,16 +98,15 @@
         <br>
         <div>
             <ul style="text-align: right;list-style-type: none;size: 15px">
-                <li>Tailored Service    ·</li>
-                <li>Relaxing Lounge for All In-house Guests    ·</li>
-                <li>World-class gourmet experience    ·</li>
-                <li>Rest lounge for all in-house guests    ·</li>
-                <li>Luxury SPA  ·</li>
+                <li>Available anywhere in the world    ·</li>
+                <li>World-class trust    ·</li>
+                <li>Ethical management    ·</li>
+                <li>ESG Management  ·</li>
             </ul>
         </div>
       </div>
       <div class="col-md-5 order-md-1">
-          <img src="{% static 'img/feature.jpg' %}" style="width: 500px; height: 500px"/>
+          <img src="{% static 'img/buildings.jpg' %}" style="width: 500px; height: 500px"/>
       </div>
     </div>
 
