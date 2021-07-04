@@ -3,43 +3,43 @@
 {% load static %}
 <head>
     <meta charset="UTF-8">
-    <title>F&B Concierge</title>
+    <title>Foreign exchange</title>
 </head>
 <body>
-<header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="/chat"><img src="{% static 'img/HotelLogo.jpg' %}" style="width: 200px; height: 100px; text-align: center"/></a>
-    <span style="position: absolute;top: 10px;right: 75px;">
-        <a href="{% url 'chat:signin' %}" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 16px 0px 0px">Sign In</a>
-        <span style="color: #ADB9CA">|</span>
-        <a href="{% url 'chat:signup' %}" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 16px 0px 15px">Sing Up</a>
-        <span style="color: #ADB9CA">|</span>
-        <a href="/chat" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 0px 0px 15px;" >My Reservation</a>
-    </span>
-      <div style="position: center;padding: 0px 66px 0px 30px;">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/chat">About The Hotel</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Reservation
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a href="{% url 'chat:reservation' %}" class="dropdown-item">Room</a>
-              <a href="{% url 'chat:houseKeeping' %}" class="dropdown-item">Housekeeping</a>
-              <a href="{% url 'chat:fbConcierge' %}" class="dropdown-item">F&B | Concierge</a>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/chat"><img src="{% static 'img/SunMoonYellow.png' %}" style="width: 200px; height: 100px; text-align: center"/></a>
+              <span style="position: absolute;top: 10px;right: 75px;">
+                  <a href="{% url 'chat:signin' %}" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 16px 0px 0px">Sign In</a>
+                  <span style="color: #ADB9CA">|</span>
+                  <a href="{% url 'chat:signup' %}" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 16px 0px 15px">Sing Up</a>
+                  <span style="color: #ADB9CA">|</span>
+                  <a href="/chat" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 0px 0px 15px;" >Certificate Center</a>
+              </span>
+            <div style="position: center;padding: 0px 66px 0px 30px;">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/chat">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Personal Banking
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a href="/chat" class="dropdown-item">Transfer</a>
+                    <a href="{% url 'chat:reservation' %}" class="dropdown-item">Financial Instruments</a>
+                    <a href="{% url 'chat:fbConcierge' %}" class="dropdown-item">Foreign Exchange</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="{% url 'chat:houseKeeping' %}">Customer Service</a>
+                </li>
+              </ul>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="/chat">Inquiries</a>
-          </li>
-        </ul>
-      </div>
-  </nav>
-</header>
+    </nav>
+  </header>
 
-        <h3 style="text-align: center; margin: 50px 0px 10px 0px">F&B Reservation</h3>
+        <h3 style="text-align: center; margin: 50px 0px 10px 0px">Exchange Rate</h3>
     <hr align="center" style="width: 300px; border: 1px solid;">
     <div style="text-align: -webkit-center;margin-top: 50px">
         <table style="border: none;">
@@ -58,35 +58,51 @@
             </td>
           </tr>
           <tr>
-            <td width=150px style="word-break:break-all;vertical-align: top;">Reservation Date</td>
+            <td width=150px style="word-break:break-all;vertical-align: top;">Date of Inquiry</td>
             <td colspan="5" width=350px style="word-break:break-all;margin-right: 50px;vertical-align: top;">
                 <span id="date_label"></span>
             </td>
           </tr>
           <tr>
-            <td>Room</td>
+            <td>Amount</td>
             <td colspan="5">
-                <input class="custom-select" type="time" id="appt" name="appt">
+                <input class="custom-select" type="number" id="appt" name="appt" min="0">
             </td>
           </tr>
           <tr>
-            <td>Personel</td>
+            <td>From</td>
             <td colspan="5">
                 <select class="custom-select">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
+                    <option value="1">KRW</option>
+                    <option value="2">USD</option>
+                    <option value="3">JPY</option>
+                    <option value="4">EUR</option>
+                    <option value="5">CNY</option>
+                    <option value="6">GBP</option>
+                    <option value="7">AUD</option>
+                    <option value="8">CAD</option>
+                    <option value="9">NZD</option>
+                  </select>
+            </td>
+          </tr>
+          <tr>
+            <td>To</td>
+            <td colspan="5">
+                <select class="custom-select">
+                    <option value="1">KRW</option>
+                    <option value="2">USD</option>
+                    <option value="3">JPY</option>
+                    <option value="4">EUR</option>
+                    <option value="5">CNY</option>
+                    <option value="6">GBP</option>
+                    <option value="7">AUD</option>
+                    <option value="8">CAD</option>
+                    <option value="9">NZD</option>
                   </select>
             </td>
           </tr>
         </table>
-        <button id="onDisplay" class="searchBtn">RESERVATION</button>
+        <button id="onDisplay" class="searchBtn">INQUIRY</button>
     </div>
     <hr align="center" style="width: 1200px;margin-bottom: 50px">
 
