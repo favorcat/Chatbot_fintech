@@ -7,334 +7,282 @@
     <title>SunMoon Bank</title>
 </head>
 <body>
-  <header>
+<header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="/chat"><img src="{% static 'img/SunMoonYellow.png' %}" style="width: 200px; height: 100px; text-align: center"/></a>
-              <span style="position: absolute;top: 10px;right: 75px;">
+        <a class="navbar-brand" href="/chat"><img src="{% static 'img/SunMoonYellow.png' %}" style="width: 200px; height: 100px; text-align: center"/></a>
+        <span style="position: absolute;top: 10px;right: 75px;">
                   <a href="{% url 'chat:signin' %}" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 16px 0px 0px">Sign In</a>
                   <span style="color: #ADB9CA">|</span>
                   <a href="{% url 'chat:signup' %}" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 16px 0px 15px">Sing Up</a>
                   <span style="color: #ADB9CA">|</span>
                   <a href="/chat" style="position: relative;display: inline-block;color: #ADB9CA;padding: 0px 0px 0px 15px;" >Certificate Center</a>
               </span>
-            <div style="position: center;padding: 0px 66px 0px 30px;">
-              <ul class="navbar-nav mr-auto">
+        <div style="position: center;padding: 0px 66px 0px 30px;">
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="/chat">About Us</a>
+                    <a class="nav-link" href="/chat">About Us</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Personal Banking
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a href="/chat" class="dropdown-item">Transfer</a>
-                    <a href="{% url 'chat:reservation' %}" class="dropdown-item">Financial Instruments</a>
-                    <a href="{% url 'chat:fbConcierge' %}" class="dropdown-item">Foreign Exchange</a>
-                  </div>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Personal Banking
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="/chat" class="dropdown-item">Transfer</a>
+                        <a href="{% url 'chat:reservation' %}" class="dropdown-item">Financial Instruments</a>
+                        <a href="{% url 'chat:fbConcierge' %}" class="dropdown-item">Foreign Exchange</a>
+                    </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " href="{% url 'chat:houseKeeping' %}">Customer Service</a>
+                    <a class="nav-link " href="{% url 'chat:houseKeeping' %}">Customer Service</a>
                 </li>
-              </ul>
-            </div>
+            </ul>
+        </div>
     </nav>
-  </header>
+</header>
 
 <main role="main">
 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{% static 'img/Lobby.jpg' %}"/>
-        <div class="container">
-          <div class="carousel-caption text-left">
-            <h2>SunMoon Bank</h2>
-          </div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'img/Lobby.jpg' %}"/>
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <h2>SunMoon Bank</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/investment.jpg' %}"/>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>With Us</h1>
+                        <p>Join us at SunMoon Bank.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/money.jpg' %}"/>
+            </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'img/investment.jpg' %}"/>
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>With Us</h1>
-            <p>Join us at SunMoon Bank.</p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'img/money.jpg' %}"/>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-
-  <div class="container marketing">
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">The Best Service</h2>
-          <br>
-        <p class="lead">With blockchain technology, you can use it safely with customer information that is stored more securely. Open banking allows integration into one rather than using applications from multiple financial institutions. We'll be your strong financial partners for the rest of your life. We make good memories in life for our customers.</p>
-      </div>
-      <div class="col-md-5">
-          <img src="{% static 'img/network.jpg' %}" style="width: 500px; height: 500px"/>
-      </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 
-    <hr class="featurette-divider">
+    <div class="container marketing">
 
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading" style="text-align: right">Brand Features</h2>
-        <br>
-        <div>
-            <ul style="text-align: right;list-style-type: none;size: 15px">
-                <li>Available anywhere in the world    ·</li>
-                <li>World-class trust    ·</li>
-                <li>Ethical management    ·</li>
-                <li>ESG Management  ·</li>
-            </ul>
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">The Best Service</h2>
+                <br>
+                <p class="lead">With blockchain technology, you can use it safely with customer information that is stored more securely. Open banking allows integration into one rather than using applications from multiple financial institutions. We'll be your strong financial partners for the rest of your life. We make good memories in life for our customers.</p>
+            </div>
+            <div class="col-md-5">
+                <img src="{% static 'img/network.jpg' %}" style="width: 500px; height: 500px"/>
+            </div>
         </div>
-      </div>
-      <div class="col-md-5 order-md-1">
-          <img src="{% static 'img/buildings.jpg' %}" style="width: 500px; height: 500px"/>
-      </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading" style="text-align: right">Brand Features</h2>
+                <br>
+                <div>
+                    <ul style="text-align: right;list-style-type: none;size: 15px">
+                        <li>Available anywhere in the world    ·</li>
+                        <li>World-class trust    ·</li>
+                        <li>Ethical management    ·</li>
+                        <li>ESG Management  ·</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img src="{% static 'img/buildings.jpg' %}" style="width: 500px; height: 500px"/>
+            </div>
+        </div>
+        <hr class="featurette-divider">
     </div>
-
-    <hr class="featurette-divider">
-  </div>
-
 </main>
-    <div>
-        <button class="open-button" onclick="openForm()"><i class="cil-chat-bubble"></i></button>
 
-        <div class="chat-popup" id="myForm">
-          <form class="form-container">
-              <textarea id="chat-log" style="width: 300px;height: 300px; margin-left: 5px; font-size: 15px"></textarea>
-              <div class="input-group">
-                  <input id="chat-message-input" type="text" placeholder="Search for..." style="width: 250px;height: 35px;margin: 0px 0px 20px 5px">
-                  <button id="chat-message-submit" type="button" class="btn btn-success" style="width: 40px; height: 35px; margin: 0px 0px 20px 10px"><i class="cil-cursor"></i></button>
-              </div>
-            <button type="button" class="btn" onclick="closeForm()" style="width: 300px;height: 40px;margin-left: 5px;text-align: center">Close</button>
-          </form>
-        </div>
-    </div>
-    <!-- bootstrap CDN -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/all.min.css">
+{% include 'chat/chatbot.html' %}
+
+<!-- bootstrap CDN -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- custom js -->
+<script src="{% static 'js/chatbot.js' %}"></script>
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/all.min.css">
 
 
-<script>
-    var chatSocket = new WebSocket(
-        'ws://' + window.location.host + '/ws/chat/');
 
-    chatSocket.onmessage = function(e) {
-        var data = JSON.parse(e.data);
-        var message = data['message'];
-        document.querySelector('#chat-log').value += ('Bot : ' + message + '\n');
-    };
-
-    chatSocket.onclose = function(e) {
-        console.error('Chat socket closed unexpectedly');
-    };
-
-    document.querySelector('#chat-message-input').focus();
-    document.querySelector('#chat-message-input').onkeyup = function(e) {
-        if (e.keyCode === 13) {  // enter, return
-            document.querySelector('#chat-message-submit').click();
-        }
-    };
-
-    document.querySelector('#chat-message-submit').onclick = function(e) {
-        var messageInputDom = document.querySelector('#chat-message-input');
-        var message = messageInputDom.value;
-        chatSocket.send(JSON.stringify({
-            'message': message
-        }));
-
-        document.querySelector('#chat-log').value += ('나 : ' + message + '\n');
-
-        messageInputDom.value = ' ';
-    };
-
-    function openForm() {
-      document.getElementById("myForm").style.display = "block";
-    }
-
-    function closeForm() {
-      document.getElementById("myForm").style.display = "none";
-    }
-    $('.carousel').carousel()
-</script>
-
+</body>
 </html>
 
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
 
 
-body {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  color: #5a5a5a;
-}
+    body {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        color: #5a5a5a;
+    }
 
-.carousel {
-  margin-bottom: 4rem;
-}
+    .carousel {
+        margin-bottom: 4rem;
+    }
 
-.carousel-caption {
-  bottom: 3rem;
-  z-index: 10;
-}
+    .carousel-caption {
+        bottom: 3rem;
+        z-index: 10;
+    }
 
-.carousel-item {
-  height: 690px;
-}
-.carousel-item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 100%;
-}
+    .carousel-item {
+        height: 690px;
+    }
+    .carousel-item > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        height: 100%;
+    }
 
-.marketing .col-lg-4 {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-.marketing h2 {
-  font-weight: 400;
-}
-.marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
-}
+    .marketing .col-lg-4 {
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    .marketing h2 {
+        font-weight: 400;
+    }
+    .marketing .col-lg-4 p {
+        margin-right: .75rem;
+        margin-left: .75rem;
+    }
 
-.featurette-divider {
-  margin: 5rem 0;
-}
+    .featurette-divider {
+        margin: 5rem 0;
+    }
 
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -.05rem;
-}
+    .featurette-heading {
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: -.05rem;
+    }
 
-@media (min-width: 40em) {
-  .carousel-caption p {
-    margin-bottom: 1.25rem;
-    font-size: 1.25rem;
-    line-height: 1.4;
-  }
+    @media (min-width: 40em) {
+        .carousel-caption p {
+            margin-bottom: 1.25rem;
+            font-size: 1.25rem;
+            line-height: 1.4;
+        }
 
-  .featurette-heading {
-    font-size: 50px;
-  }
-}
+        .featurette-heading {
+            font-size: 50px;
+        }
+    }
 
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
-  }
-}
+    @media (min-width: 62em) {
+        .featurette-heading {
+            margin-top: 7rem;
+        }
+    }
 
-.open-button {
-  background-color: #343a40;
-  color: white;
-  padding: 16px 20px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 60px;
-  height: 60px;
-}
+    .open-button {
+        background-color: #343a40;
+        color: white;
+        padding: 16px 20px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: fixed;
+        bottom: 23px;
+        right: 28px;
+        width: 60px;
+        height: 60px;
+    }
 
-.chat-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 10;
-}
+    .chat-popup {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 10;
+    }
 
-.form-container {
-  max-width: 350px;
-  padding: 10px;
-  background-color: white;
-}
+    .form-container {
+        max-width: 350px;
+        padding: 10px;
+        background-color: white;
+    }
 
-.form-container textarea {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-  resize: none;
-  min-height: 200px;
-}
+    .form-container textarea {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+        resize: none;
+        min-height: 200px;
+    }
 
-.form-container input {
-    width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-  resize: none;
-  min-height: 20px;
-}
+    .form-container input {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+        resize: none;
+        min-height: 20px;
+    }
 
-.form-container textarea:focus {
-  background-color: #ddd;
-  outline: none;
-}
+    .form-container textarea:focus {
+        background-color: #ddd;
+        outline: none;
+    }
 
-.form-container .btn {
-  background-color: #343a40;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-bottom:10px;
-  opacity: 0.8;
-}
+    .form-container .btn {
+        background-color: #343a40;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-bottom:10px;
+        opacity: 0.8;
+    }
 
-.form-container .cancel {
-  background-color: #013e73 ;
-}
+    .form-container .cancel {
+        background-color: #013e73 ;
+    }
 
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
-}
+    .form-container .btn:hover, .open-button:hover {
+        opacity: 1;
+    }
 
-.item h4 {
-  font-size: 19px;
-  line-height: 1.375em;
-  font-weight: 400;
-  font-style: italic;
-  margin: 70px 0;
-}
+    .item h4 {
+        font-size: 19px;
+        line-height: 1.375em;
+        font-weight: 400;
+        font-style: italic;
+        margin: 70px 0;
+    }
 
-.item span {
-  font-style: normal;
-}
+    .item span {
+        font-style: normal;
+    }
 </style>
 
