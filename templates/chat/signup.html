@@ -1,89 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
-  <head>
+<head>
     <title>Signup</title>
 
 
-  </head>
+</head>
 <body style="text-align: center; align-items: center">
-        <form class="form-signup">
-            <img src="{% static 'img/SunMoonBlack.png' %}" style="width: 100%;margin-bottom: 30px"/>
-  <label for="inputEmail" class="sr-only"></label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" >
-  <label for="inputPassword" class="sr-only"></label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password">
-  <label for="inputPassword" class="sr-only"></label>
-  <input type="password" id="chaeckPassword" class="form-control" placeholder="Password">
-  <a href="/chat" class="signBtn">Sign up</a>
-  <a href="{% url 'chat:signup' %}" class="accountStyle">Do you already have an account?</a>
-  <p></p>
+<form class="form-signup">
+    <img src="{% static 'img/SunMoonBlack.png' %}" style="width: 100%;margin-bottom: 30px"/>
+    <label for="inputEmail" class="sr-only"></label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" >
+    <label for="inputPassword" class="sr-only"></label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password">
+    <label for="inputPassword" class="sr-only"></label>
+    <input type="password" id="chaeckPassword" class="form-control" placeholder="Password">
+    <a href="/chat" class="signBtn">Sign up</a>
+    <a href="{% url 'chat:signup' %}" class="accountStyle">Do you already have an account?</a>
+    <p></p>
 
 </form>
 
 
-    <!-- Bootstrap core CSS -->
+<!-- Bootstrap core CSS -->
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </body>
 
-<script>
-    var chatSocket = new WebSocket(
-        'ws://' + window.location.host + '/ws/signup/');
-</script>
 </html>
 
 <style>
-html,
-body {
-  height: 96%;
-}
-body {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  padding-bottom: 40px;
-  background-color: #f5f5f5;
-}
+    html,
+    body {
+        height: 96%;
+    }
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+    }
 
-.form-signup {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-}
+    .form-signup {
+        width: 100%;
+        max-width: 330px;
+        padding: 15px;
+        margin: auto;
+    }
 
-.form-signup .form-control {
-  position: relative;
-  box-sizing: border-box;
-  width: 300px;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ced4da;
-  border-radius: .25rem;
-}
+    .form-signup .form-control {
+        position: relative;
+        box-sizing: border-box;
+        width: 300px;
+        height: auto;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+    }
 
-.signBtn {
-  width: 280px;
-  padding: 10px;
-  margin: 30px 0px 0px 15px;
-  display: block;
-  background-color: #343a40;
-  color: white;
-  cursor: pointer;
-  margin-bottom:10px;
-  border-radius: .25rem;
-  text-decoration:none;
-}
-.aStyle {
-  text-decoration: none;
-  color:#343a40 ;
-  font-size: 13px;
-}
-.accountStyle {
-  text-decoration: none;
-  color:royalblue ;
-  font-size: 14px;
-}
+    .signBtn {
+        width: 280px;
+        padding: 10px;
+        margin: 30px 0px 0px 15px;
+        display: block;
+        background-color: #343a40;
+        color: white;
+        cursor: pointer;
+        margin-bottom:10px;
+        border-radius: .25rem;
+        text-decoration:none;
+    }
+    .aStyle {
+        text-decoration: none;
+        color:#343a40 ;
+        font-size: 13px;
+    }
+    .accountStyle {
+        text-decoration: none;
+        color:royalblue ;
+        font-size: 14px;
+    }
 </style>
