@@ -3,7 +3,8 @@
 
     <div class="chat-popup" id="myForm">
         <div class="form-container">
-            <textarea id="chat-log" style="width: 300px;height: 300px; margin-left: 5px; font-size: 15px"></textarea>
+            <blockquote id="chat_root">
+            </blockquote>
             <div class="input-group">
                 <input id="chat-message-input" type="text" placeholder="Search for..." style="width: 250px;height: 35px;margin: 0px 0px 20px 5px">
                 <button id="chat-message-submit" type="button" class="btn btn-success" style="width: 40px; height: 35px; margin: 0px 0px 20px 10px"><i class="cil-cursor"></i></button>
@@ -12,3 +13,27 @@
         </div>
     </div>
 </div>
+
+<style>
+blockquote#chat_root {
+  margin: 0 auto;
+  max-width: 320px;
+}
+p.chat_log {
+  margin: 0 0 0.5em;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  background: #e5e5ea;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+p.chat_log.them {
+  float: left;
+}
+p.chat_log.me {
+  float: right;
+  background-color: #1289fe;
+  color: white;
+}
+</style>
