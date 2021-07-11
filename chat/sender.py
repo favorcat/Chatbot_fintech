@@ -9,12 +9,20 @@ import requests
 class ChatbotMessageSender:
 
     # chatbot api gateway url
-    ep_path = 'https://f85ad0f761004c0eab772b79c861c861.apigw.ntruss.com/custom/v1/4965/46097fd4489d8a24d99a333c34b055a49304d70bc81635c15887baa075ed2649'
+    ep_path = 'https://f85ad0f761004c0eab772b79c861c861.apigw.ntruss.com/custom/v1/4968/77e3f050e66436c963a670c543621c663212da0fe0fc4c9d35efc31856db1ef4'
     # chatbot custom secret key
-    secret_key = 'cnZHc3ZEZFFvRE1LcHNnZVNvdWlRQVFJRFF5WHB0QWI='
+    secret_key = 'd0pJd0tYZHRJUXpETUl3YVZseVBEV3pxVWprYmtsbWY='
+
+    def __init__(self, lang):
+        if lang == 'ko':
+            self.ep_path = 'https://f85ad0f761004c0eab772b79c861c861.apigw.ntruss.com/custom/v1/4965/46097fd4489d8a24d99a333c34b055a49304d70bc81635c15887baa075ed2649';
+            self.secret_key = 'cnZHc3ZEZFFvRE1LcHNnZVNvdWlRQVFJRFF5WHB0QWI='
+        elif lang == 'ja':
+            self.ep_path = 'https://f85ad0f761004c0eab772b79c861c861.apigw.ntruss.com/custom/v1/4967/ba8b8d76e0d18d6d1537770aa41f123285e01a7c33712f656bd9d02a476e5b2e'
+            self.secret_key = 'Ym9GaWpkbGRJalZ4dkpFUVNETVRvZlVwSVNQUWN3Yno='
+
 
     def req_message_send(self, msg):
-
         timestamp = self.get_timestamp()
         request_body = {
             'version': 'v2',
